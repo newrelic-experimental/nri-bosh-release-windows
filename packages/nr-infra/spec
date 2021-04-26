@@ -1,0 +1,5 @@
+---
+name: nr-infra
+
+files:
+- newrelic-infra.1.2.1.msi

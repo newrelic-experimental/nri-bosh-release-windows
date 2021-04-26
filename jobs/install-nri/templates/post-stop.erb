@@ -1,0 +1,19 @@
+
+Write-Host "Post-stop Job for New Relic Infrastructure"
+
+Write-Host $DataStamp "`r`n"
+
+$nriService = Get-Service -Name "newrelic-infra" -ErrorAction SilentlyContinue
+if ($nriService) {
+  Write-Host "Found New Relic Inrastructure service."
+  if ($nriService.Status -eq 'Running') {
+    Write-Host "New Relic Infrastructure is running. Stopping now."
+    Stop-Service "newrelic-infra"
+    Start-Sleep -seconds 30
+    $nriService.Refresh()
+    if ($nriService.Status -eq 'Running') {
+      Write-Host "New Relic Infrastructure did not stop within 30 seconds"
+    }
+  }
+}
+

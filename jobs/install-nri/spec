@@ -1,0 +1,19 @@
+---
+name: install-nri
+
+templates:
+  nri.ps1: bin/pre-start.ps1
+  post-stop.erb: bin/post-stop.ps1
+
+packages:
+- nr-infra
+
+properties:
+  infra_agent.license_key:
+    description: license key
+  infra_agent.environment:
+    description: Environment deploying to--for example Sandbox
+    default: "unspecified"
+  infra_agent.custom_attributes:
+    description: New Relic Infrastructure custom attributes
+

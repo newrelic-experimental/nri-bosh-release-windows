@@ -1,0 +1,65 @@
+releases:
+- name: nri-bosh-release-trusty
+  version: 1.0.1033
+- name: nri-bosh-release-windows
+  version: 1.0.1033
+- name: windows-utilities
+  version: 0.11.0+dev.1
+
+addons:
+- name: nri-bosh-release-trusty
+  jobs:
+  - name: install-nri
+    release: nri-bosh-release-trusty
+  include: 
+    stemcell:
+    - os: ubuntu-trusty
+  properties:
+    infra_agent:
+      license_key: 00a83db699b782bddd08b4e86d7ad1c7d40441e4
+      environment: Sandbox
+      custom_attributes:
+        firstName: Paul
+        lastName: Brant
+- name: nri-bosh-release-windows
+  jobs:
+  - name: install-nri
+    release: nri-bosh-release-windows
+  include: 
+    stemcell:
+    - os: windows2012R2
+  properties:
+    infra_agent:
+      license_key: 00a83db699b782bddd08b4e86d7ad1c7d40441e4
+      environment: Sandbox
+      custom_attributes:
+        firstName: Paul
+        lastName: Brant
+- name: win-enable-rdp
+  jobs:
+  - name: enable_rdp
+    properties:
+      enable_rdp:
+        enabled: true
+    release: windows-utilities
+  include:
+    stemcell:
+    - os: windows2012R2
+- name: win-enable-ssh
+  jobs:
+  - name: enable_ssh
+    release: windows-utilities
+  include:
+    stemcell:
+    - os: windows2012R2
+- name: win-set-password
+  jobs:
+  - name: set_password
+    release: windows-utilities
+    properties:
+      set_password:
+        username: "Administrator" # defaults to "Administrator"
+        password: "Foobar123!" # must meet default Windows complexity requirements
+  include:
+    stemcell:
+    - os: windows2012R2

@@ -1,0 +1,5 @@
+#echo "copying New Relic .Net Agent installer"
+
+"copying New Relic .Net Agent installer with powershell commands"
+
+Copy-Item 'newrelic-infra.1.2.1.msi' "$env:BOSH_INSTALL_TARGET\newrelic-infra.1.2.1.msi"
