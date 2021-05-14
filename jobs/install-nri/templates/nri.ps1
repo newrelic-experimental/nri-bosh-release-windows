@@ -23,7 +23,7 @@ if ($arrService) {
 $MSIArguments = @(
     "/qn"
     "/i"
-    "C:\var\vcap\packages\nr-infra\newrelic-infra.1.2.1.msi"
+    "C:\var\vcap\packages\nr-infra\newrelic-infra.1.17.1.msi"
     "/L*v"
     $logFile
 )
@@ -32,12 +32,17 @@ Start-Process "msiexec.exe" -ArgumentList $MSIArguments -Wait -NoNewWindow
 
 Write-Host "Installer done. `r`n"
 
+New-Item -Path "c:\var\vcap" -Name "install-nri" -ItemType "directory" -ErrorAction SilentlyContinue
+Write-Host "Created c:\var\vcap\install-nri log directory. `r`n"
+New-Item -Path "c:\var\vcap\install-nri" -Name "newrelic-infa.log" -ItemType "file" -ErrorAction SilentlyContinue
+Write-Host "Created c:\var\vcap\install-nri\newrelic-infa.log file. `r`n"
+
 $configFile = "C:\Program Files\New Relic\newrelic-infra\newrelic-infra.yml"
 
 Set-Content -Path $configFile -Value "license_key: <%= p('infra_agent.license_key') %>`r`n"
 
 Add-Content -Path $configFile -Value "display_name: <%= spec.name + '-' + spec.id %>`r`n"
-Add-Content -Path $configFile -Value "log_file: C:\var\vcap\data\sys\log\install-nri\newrelic-infa.log`r`n"
+Add-Content -Path $configFile -Value "log_file: c:\var\vcap\install-nri\newrelic-infa.log`r`n"
 
 Add-Content -Path $configFile -Value "custom_attributes:"
 Add-Content -Path $configFile -Value "  bosh.az: <%= spec.az %>"
