@@ -2,4 +2,4 @@ name: nri-bosh-release-windows
 blobstore:
   provider: local
   options:
-    blobstore_path: /Users/shahram/projects/manulife/bosh_release/shahramk/blobstore
+    blobstore_path: /Users/shahram/projects/manulife/bosh_release/shahramk/local_blobstore

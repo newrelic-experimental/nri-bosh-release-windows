@@ -8,10 +8,10 @@ The release is meant to be installed as an addon. In order to facilitate that, a
 
 To use, upload the release:
 ```bash
-bosh upload-release ~/Downloads/nr-bosh-release-windows-1.0.1033.tgz
+bosh upload-release nri-bosh-release-windows-1.17.1.tgz
 ```
 
-and. Then update the runtime config
+and. Then update the runtime config (add license key, etc.)
 ```bash
 bosh update-runtime-config runtime.yml
 ```
