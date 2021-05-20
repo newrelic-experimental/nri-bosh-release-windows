@@ -15,13 +15,13 @@ addons:
     release: nri-bosh-release-xenial
     properties:
       infra_agent:
-        license_key: ___NEW_RELIC_LICENSE_KEY___
+        license_key: ___ENTER_NEW_RELIC_LICENSE_KEY___
         environment: xenial
         agent_props:
           # prop: gets added to /etc/newrelic-infra.yml config file
         custom_attributes:
-          platform: pcf
-          foundation: lightcrimson
+          platform: ___ENTER_PLATFORM_NAME___
+          foundation: ___ENTER_PCF_FOUNDATION_NAME___
   include:
     stemcell:
     - os: ubuntu-xenial
@@ -32,13 +32,13 @@ addons:
     release: nri-bosh-release-windows
     properties:
       infra_agent:
-        license_key: ___NEW_RELIC_LICENSE_KEY___
+        license_key: ___ENTER_NEW_RELIC_LICENSE_KEY___
         environment: Sandbox
         agent_props:
           # prop: gets added to /etc/newrelic-infra.yml config file
         custom_attributes:
-          platform: pcf
-          foundation: radicalred
+          platform: ___ENTER_PLATFORM_NAME___
+          foundation: ___ENTER_PCF_FOUNDATION_NAME___
   include: 
     stemcell:
     - os: windows2019

@@ -44,6 +44,13 @@ Set-Content -Path $configFile -Value "license_key: <%= p('infra_agent.license_ke
 Add-Content -Path $configFile -Value "display_name: <%= spec.name + '-' + spec.id %>`r`n"
 Add-Content -Path $configFile -Value "log_file: c:\var\vcap\install-nri\newrelic-infa.log`r`n"
 
+<%- if_p('infra_agent.agent_props') do |props| -%>
+  <%- props.each do |key, value| -%>
+Add-Content -Path $configFile -Value "<%= key %>: <%= value %>"
+  <%- end -%>
+Add-Content -Path $configFile -Value "`r`n"
+<%- end -%>
+
 Add-Content -Path $configFile -Value "custom_attributes:"
 Add-Content -Path $configFile -Value "  bosh.az: <%= spec.az %>"
 Add-Content -Path $configFile -Value "  bosh.bootstrap: <%= spec.bootstrap %>"

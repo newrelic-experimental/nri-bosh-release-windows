@@ -16,4 +16,5 @@ properties:
     default: "unspecified"
   infra_agent.custom_attributes:
     description: New Relic Infrastructure custom attributes
-
+  infra_agent.agent_props:
+    description: Passthru properties for the infrastructure agent
