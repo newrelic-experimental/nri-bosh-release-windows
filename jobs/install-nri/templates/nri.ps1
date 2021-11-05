@@ -23,7 +23,7 @@ if ($arrService) {
 $MSIArguments = @(
     "/qn"
     "/i"
-    "C:\var\vcap\packages\nr-infra\newrelic-infra.1.17.1.msi"
+    "C:\var\vcap\packages\nr-infra\newrelic-infra.1.20.7.msi"
     "/L*v"
     $logFile
 )

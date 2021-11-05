@@ -1,12 +1,10 @@
 releases:
 # xenial
 - name: nri-bosh-release-xenial
-  version: 1.16.5
+  version: 1.20.7
 # windows
 - name: nri-bosh-release-windows
-  version: 1.17.1d
-- name: windows-utilities
-  version: 0.14.0
+  version: 1.20.7
 
 addons:
 - name: nri-bosh-release-xenial
@@ -40,15 +38,5 @@ addons:
           platform: ___ENTER_PLATFORM_NAME___
           foundation: ___ENTER_PCF_FOUNDATION_NAME___
   include: 
-    stemcell:
-    - os: windows2019
-- name: win-enable-rdp
-  jobs:
-  - name: enable_rdp
-    properties:
-      enable_rdp:
-        enabled: true
-    release: windows-utilities
-  include:
     stemcell:
     - os: windows2019

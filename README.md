@@ -8,7 +8,7 @@ The release is meant to be installed as an addon. In order to facilitate that, a
 
 To use, upload the release:
 ```bash
-bosh upload-release nri-bosh-release-windows-1.17.1.tgz
+bosh upload-release nri-bosh-release-windows-1.20.7.tgz
 ```
 
 and. Then update the runtime config (add license key, etc.)
