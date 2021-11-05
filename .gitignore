@@ -3,6 +3,7 @@ config/private.yml
 dev_releases
 releases/*.tgz
 releases/**/*.tgz
+release
 .dev_builds
 .final_builds/jobs/**/*.tgz
 .final_builds/packages/**/*.tgz
