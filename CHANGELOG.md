@@ -1,3 +1,8 @@
+<a name="Unreleased"></a>
+## [Unreleased]
+### Feature
+- **docs:** update documentation
+
 <a name="v1.20.7"></a>
 ## [v1.20.7] - 2021-11-05
 ### Feature
