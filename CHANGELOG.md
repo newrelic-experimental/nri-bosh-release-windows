@@ -9,6 +9,6 @@
 - **release:** upgrade to the latest infrastructure agent
 
 [Unreleased]: https://github.com/newrelic/nri-bosh-release-windows/compare/v1.20.7...HEAD
-[v1.20.7]: https://github.com/newrelic/newrelic-client-go/compare/v1.17.1d...v1.20.7
-[v1.17.1d]: https://github.com/newrelic/newrelic-client-go/compare/1.17.1...v1.17.1d
+[v1.20.7]: https://github.com/newrelic/nri-bosh-release-windows/compare/v1.17.1d...v1.20.7
+[v1.17.1d]: https://github.com/newrelic/nri-bosh-release-windows/compare/1.17.1...v1.17.1d
 
